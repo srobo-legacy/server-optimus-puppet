@@ -29,4 +29,10 @@ class optimus( ) {
 
   # Jenkins CI
   include jenkins
+
+  # The plugins we want (we need to explicitly fulfill the dependencies!)
+  jenkins::plugin {
+    "git": ;
+    "gerrit-trigger": ;
+  }
 }
