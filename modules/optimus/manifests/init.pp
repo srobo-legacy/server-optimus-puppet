@@ -57,7 +57,7 @@ class optimus( ) {
   exec { 'jenkins-ssh-keys':
     command => "ssh-keygen -N '' -f ${jenkins_root}/.ssh/id_rsa",
     creates => ["${jenkins_root}/.ssh/id_rsa","${jenkins_root}/.ssh/id_rsa.pub"],
-    require => [Vcsrepo["${jenkins_root}"],File["${jenkins_root}/.ssh"],Class["jenkins::package"]]
+    require => [Vcsrepo["${jenkins_root}"],File["${jenkins_root}/.ssh"]]
   }
 
   exec { 'fix-jenkins-ownership':
